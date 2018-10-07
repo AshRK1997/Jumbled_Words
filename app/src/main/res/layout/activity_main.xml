@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#d2d2d2"
+    android:id="@+id/mainef"
+    >
+    <RelativeLayout
+        android:id="@+id/action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/main_bg"
+        android:layout_centerHorizontal="true"
+        android:padding="12dp"
+        android:elevation="10dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Jumbly Jumbler"
+            android:textColor="#d2d2d2"
+            android:textSize="25sp"
+            />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scroller"
+        android:layout_below="@id/action"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/footer"
+        android:fillViewport="true">
+        <RelativeLayout
+            android:id="@+id/buffer"
+            android:layout_below="@+id/action"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+            <RelativeLayout
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/playing"
+                android:background="@drawable/main_play"
+                android:elevation="15dp"
+                >
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Wanna Play Jumbled Words? Choose a Difficulty Level"
+                    android:textSize="22sp"
+                    android:gravity="center"/>
+
+
+                <LinearLayout
+                    android:id="@+id/lvl"
+                    android:layout_below="@+id/textView"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:weightSum="3"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/round_ntn"
+                        android:text="1"
+                        android:id="@+id/button"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="20sp"
+                        android:textColor="@color/white"
+                        android:elevation="20dp"
+                        android:onClick="easy"
+                        />
+
+                    <Button
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/round_ntn"
+                        android:text="2"
+                        android:id="@+id/button2"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="20sp"
+                        android:textColor="@color/white"
+                        android:elevation="20dp"
+                        android:onClick="med"/>
+                    <!--android:drawableTop="@android:drawable/ic_dialog_info"-->
+                    <!-- to add image inside the circular button-->
+                    <Button
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/round_ntn"
+                        android:text="3"
+                        android:id="@+id/button3"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="20sp"
+                        android:textColor="@color/white"
+                        android:elevation="20dp"
+                        android:onClick="diffi"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_below="@id/playing"
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/playing1"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/main_play"
+                android:elevation="10dp"
+                android:layout_marginBottom="15dp"
+                >
+                <TextView
+                    android:id="@+id/helpfeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Help and Feedback"
+                    android:textSize="22sp"
+                    android:gravity="center"/>
+
+                <LinearLayout
+                    android:id="@+id/help"
+                    android:layout_below="@+id/helpfeed"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:weightSum="5"
+                    android:padding="10dp">
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/card_fd"
+                        android:padding="10dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:weightSum="3"
+                        android:elevation="7dp"
+                        android:onClick="feedback"
+                        >
+                        <ImageView
+
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ic_feedback"
+                            android:layout_marginLeft="-20dp"/>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="fill_parent"
+                            android:background="#FFFFFF"
+                            android:layout_weight="0.03"
+                            android:layout_marginLeft="-10dp"
+                            android:layout_marginStart="-10dp"
+                            />
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.9"
+                            android:text="Feedback"
+                            android:textColor="@color/white"
+                            android:textSize="22sp"
+                            android:gravity="center"
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/card_fd"
+                        android:padding="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:elevation="7dp"
+                        android:onClick="report"
+                        >
+                        <ImageView
+
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ic_bug_report_black_24dp"
+                            android:layout_marginLeft="-20dp"
+                            android:layout_marginStart="-20dp" />
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="fill_parent"
+                            android:background="#FFFFFF"
+                            android:layout_weight="0.03"
+                            android:layout_marginLeft="-10dp"
+                            android:paddingLeft="20dp"
+                            android:layout_marginStart="-10dp"
+                            android:paddingStart="20dp" />
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.9"
+                            android:text="Bug Report"
+                            android:textColor="@color/white"
+                            android:textSize="22sp"
+                            android:gravity="center"
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/card_fd"
+                        android:padding="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:elevation="7dp"
+                        android:onClick="helper"
+                        >
+                        <ImageView
+
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ic_help_outline_black_24dp"
+                            android:layout_marginLeft="-20dp"/>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="fill_parent"
+                            android:background="#FFFFFF"
+                            android:layout_weight="0.03"
+                            android:layout_marginLeft="-10dp"
+                            android:paddingLeft="20dp"/>
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.9"
+                            android:text="Help"
+                            android:textColor="@color/white"
+                            android:textSize="22sp"
+                            android:gravity="center"
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/card_fd"
+                        android:padding="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:elevation="7dp"
+                        android:onClick="share"
+                        >
+                        <ImageView
+
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ic_share_black_24dp"
+                            android:layout_marginLeft="-20dp"/>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="fill_parent"
+                            android:background="#FFFFFF"
+                            android:layout_weight="0.03"
+                            android:layout_marginLeft="-10dp"
+                            android:paddingLeft="20dp"/>
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.9"
+                            android:text="Share"
+                            android:textColor="@color/white"
+                            android:textSize="22sp"
+                            android:gravity="center"
+                            />
+
+                    </LinearLayout>
+
+                    <!--android:drawableTop="@android:drawable/ic_dialog_info"-->
+                    <!-- to add image inside the circular button-->
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/main_end"
+
+        android:elevation="10dp"
+        android:padding="12dp"
+        android:layout_alignParentLeft="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Created by ENGIN"
+            android:textColor="#d2d2d2"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
