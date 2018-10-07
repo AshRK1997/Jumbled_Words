@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         ShareingIntent.putExtra(Intent.EXTRA_TEXT, "A simple game to pass your time and improve your vocab!!" + "\n" + "Here is Jumbly Jumbler" + "\n" + " To download" + "\n" + "https://this_is_not_a_link");
         startActivity(ShareingIntent);
     }
-    
+
 
 
 }
