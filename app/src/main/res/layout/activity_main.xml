@@ -64,7 +64,7 @@
                 <LinearLayout
                     android:id="@+id/lvl"
                     android:layout_below="@+id/textView"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
@@ -72,12 +72,11 @@
                     android:padding="10dp">
 
                     <Button
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/round_ntn"
-                        android:text="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/card_fd"
+                        android:text="Easy"
                         android:id="@+id/button"
-                        android:layout_marginLeft="10dp"
                         android:textSize="20sp"
                         android:textColor="@color/white"
                         android:elevation="20dp"
@@ -85,29 +84,29 @@
                         />
 
                     <Button
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/round_ntn"
-                        android:text="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/card_fd"
+                        android:text="Normal"
                         android:id="@+id/button2"
-                        android:layout_marginLeft="10dp"
                         android:textSize="20sp"
                         android:textColor="@color/white"
                         android:elevation="20dp"
-                        android:onClick="med"/>
+                        android:onClick="med"
+                        android:layout_marginTop="10dp"/>
                     <!--android:drawableTop="@android:drawable/ic_dialog_info"-->
                     <!-- to add image inside the circular button-->
                     <Button
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/round_ntn"
-                        android:text="3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/card_fd"
+                        android:text="Difficult"
                         android:id="@+id/button3"
-                        android:layout_marginLeft="10dp"
                         android:textSize="20sp"
                         android:textColor="@color/white"
                         android:elevation="20dp"
-                        android:onClick="diffi"/>
+                        android:onClick="diffi"
+                        android:layout_marginTop="10dp"/>
 
                 </LinearLayout>
             </RelativeLayout>
