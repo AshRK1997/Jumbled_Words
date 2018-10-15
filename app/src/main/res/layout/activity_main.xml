@@ -93,7 +93,7 @@
                         android:textColor="@color/white"
                         android:elevation="20dp"
                         android:onClick="med"
-                        android:layout_marginTop="10dp"/>
+                        android:layout_marginTop="11dp"/>
                     <!--android:drawableTop="@android:drawable/ic_dialog_info"-->
                     <!-- to add image inside the circular button-->
                     <Button
@@ -106,7 +106,7 @@
                         android:textColor="@color/white"
                         android:elevation="20dp"
                         android:onClick="diffi"
-                        android:layout_marginTop="10dp"/>
+                        android:layout_marginTop="11dp"/>
 
                 </LinearLayout>
             </RelativeLayout>
