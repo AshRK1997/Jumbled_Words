@@ -72,9 +72,6 @@ public class Play extends AppCompatActivity {
     private void normal() {
         currentWord = med[r.nextInt(med.length)];
         shuffleit=shuffleWord(currentWord);
-        if (shuffleit.equals(currentWord)){
-            shuffleit=shuffleWord(currentWord);
-        }
         shuffled.setText(shuffleit);
         Log.d(currentWord,"word");
         checkans(currentWord,2);
@@ -83,9 +80,7 @@ public class Play extends AppCompatActivity {
     private void easier() {
         currentWord = easy[r.nextInt(easy.length)];
         shuffleit=shuffleWord(currentWord);
-        if (shuffleit.equals(currentWord)){
-            shuffleit=shuffleWord(currentWord);
-        }
+
         shuffled.setText(shuffleit);
         Log.d(currentWord,"word");
         checkans(currentWord,1);
@@ -93,9 +88,7 @@ public class Play extends AppCompatActivity {
     private void difficult(){
         currentWord = diffi[r.nextInt(diffi.length)];
         shuffleit=shuffleWord(currentWord);
-        if (shuffleit.equals(currentWord)){
-            shuffleit=shuffleWord(currentWord);
-        }
+
         shuffled.setText(shuffleit);
         Log.d(currentWord,"word");
         checkans(currentWord,3);
@@ -182,13 +175,30 @@ public class Play extends AppCompatActivity {
         quitbefrcnfrm();
     }
     private String shuffleWord(String word){
-        List<String> letters = Arrays.asList(word.split(""));
+        /*List<String> letters = Arrays.asList(word.split(""));
         Collections.shuffle(letters);
         String shuffled = "";
         for(String letter : letters){
             shuffled += letter;
+        }*/
+        Random r = new Random();
+        char a[] = word.toCharArray();
+
+
+        for( int i=0 ; i<a.length ; i++ )
+        {
+            int j = r.nextInt(a.length);
+            // Swap letters
+            char temp = a[i]; a[i] = a[j];  a[j] = temp;
         }
-        return  shuffled;
+
+        String b = new String( a );
+
+
+        if (word.equals(b)){
+            shuffleWord(b);
+        }
+        return  b;
     }
 
     public void quitt(View view) {
@@ -249,4 +259,19 @@ public class Play extends AppCompatActivity {
         dialog.show();
 
     }
+
+    @Override
+    protected void onPause() {
+
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume(){
+
+        super.onResume();
+    }
+
+
+
 }
